@@ -1,0 +1,58 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Registrar una nueva sustitución</mat-card-title>
+      </mat-card-header>
+
+      <form class="example-form">
+        <mat-card-content>
+          
+          <mat-form-field class="example-full-width">
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Fecha de la sustitución"
+              [value]="fecha" (dateInput)="setFecha($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker [startAt]="fecha"></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <label>Hora de la sustitución:</label><br/>
+            <mat-select [(ngModel)]="hora_sustitucion" name="hora_sustitucion" (selectionChange)="setHour($event.value)">
+                <mat-option value="1"><p>1º Hora</p></mat-option>
+                <mat-option value="2"><p>2º Hora</p></mat-option>
+                <mat-option value="3"><p>3º Hora</p></mat-option>
+                <mat-option value="4"><p>4º Hora</p></mat-option>
+                <mat-option value="5"><p>5º Hora</p></mat-option>
+                <mat-option value="6"><p>6º Hora</p></mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <label>Aula de la sustitución:</label><br/>
+            <mat-select [(ngModel)]="id_aula" [(value)]="nombre_aula" name="id_aula" (selectionChange)="setDispProf($event.value)">
+                <mat-option *ngFor="let aula of listaAulas" [value]="aula.id">{{aula.data.nombre}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <label>Profesor a sustituir:</label><br/>
+            <mat-select [(ngModel)]="id_profesor_ausente" name="id_profesor_ausente">
+                <mat-option *ngFor="let profesor of listaProfesores" [value]="profesor.id">{{profesor.data.nombre + " " + profesor.data.apellidos}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <label>Profesor sustituto:</label><br/>
+            <mat-select [(ngModel)]="id_sustituto" name="id_sustituto">
+                <mat-option *ngFor="let profesor of listaDisposicionesProfesores" [value]="profesor.id">{{profesor.data.nombre + " " + profesor.data.apellidos}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-card-content>
+      </form>
+      <div mat-dialog-actions>
+        <button mat-raised-button color="warn" class="btn-block" (click)="doRegistrar()">Registrar sustitución</button>
+        <button mat-button (click)="cerrarDialog()">Cancelar</button>
+      </div>
+  
+    </mat-card>
+  </div>

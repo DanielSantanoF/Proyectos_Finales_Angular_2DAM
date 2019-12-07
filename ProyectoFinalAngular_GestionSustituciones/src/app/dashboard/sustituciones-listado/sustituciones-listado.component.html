@@ -1,0 +1,57 @@
+<div fxLayout='column'>
+
+    <button mat-fab color="warn" class="mat-fab-bottom-right" (click)="crearSustituciones()" style="z-index: 9;">
+    <mat-icon class="mat-24">add</mat-icon>
+    </button>
+  
+  <table mat-table [dataSource]="listaSustituciones" class="mat-elevation-z8">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- nombreProfesorAusente Column -->
+      <ng-container matColumnDef="nombreProfesorAusente">
+        <th mat-header-cell *matHeaderCellDef> Nombre profesor ausente </th>
+        <td mat-cell *matCellDef="let element"> {{element.data.nombre_profesor_ausente + " " + element.data.apellidos_profesor_ausente}} </td>
+      </ng-container>
+
+      <!-- nombreProfesorSustituto Column -->
+      <ng-container matColumnDef="nombreProfesorSustituto">
+        <th mat-header-cell *matHeaderCellDef> Nombre profesor sustituto </th>
+        <td mat-cell *matCellDef="let element"> {{element.data.nombre_sustituto + " " + element.data.apellidos_sustituto}} </td>
+      </ng-container>
+    
+      <!-- fechaSustituir Column -->
+      <ng-container matColumnDef="fechaSustituir">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.data.fecha.toDate() | date:'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+      <!-- horaSustituir Column -->
+      <ng-container matColumnDef="horaSustituir">
+          <th mat-header-cell *matHeaderCellDef> Hora a sustituir </th>
+          <td mat-cell *matCellDef="let element"> {{element.data.fecha.toDate() | date:'h:mm a'}} </td>
+        </ng-container>
+
+      <!-- horaSustituir Column -->
+      <ng-container matColumnDef="aula">
+        <th mat-header-cell *matHeaderCellDef> Aula </th>
+        <td mat-cell *matCellDef="let element"> {{element.data.nombre_aula}} </td>
+      </ng-container>
+  
+      <!-- Acciones Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button aria-label="Editar sustituciones" (click)="editarSustituciones(element.id, element.data)">
+            <mat-icon>edit</mat-icon></button>
+          <button mat-icon-button aria-label="Eliminar sustituciones" (click)="eliminarSustituciones(element.id)">
+            <mat-icon>delete</mat-icon></button>
+      </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+

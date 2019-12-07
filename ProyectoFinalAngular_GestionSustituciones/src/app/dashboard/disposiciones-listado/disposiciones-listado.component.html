@@ -1,0 +1,35 @@
+<div fxLayout='column'>
+
+        <button mat-fab color="warn" class="mat-fab-bottom-right" (click)="crearDisposiciones()" style="z-index: 9;">
+    <mat-icon class="mat-24">add</mat-icon>
+    </button>
+    
+  <table mat-table [dataSource]="listaDisposiciones" class="mat-elevation-z8">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- nombre Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Día de la semana </th>
+        <td mat-cell *matCellDef="let element"> {{element.data.nombre_dia}} </td>
+      </ng-container>
+  
+      <!-- Acciones Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button aria-label="Ver DisposicionesProfesores" (click)="verDisposicionesProfesores(element.id)">
+            <mat-icon>remove_red_eye</mat-icon></button>
+                <button mat-icon-button aria-label="Editar disposicion" (click)="editarDisposiciones(element.id, element.data)">
+            <mat-icon>edit</mat-icon></button>
+            
+          <button mat-icon-button aria-label="Eliminar disposicion" (click)="eliminarDisposiciones(element.id)">
+            <mat-icon>delete</mat-icon></button>
+      </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>

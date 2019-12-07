@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Registrar aula</mat-card-title>
+      </mat-card-header>
+
+        <form class="example-form">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="nombre" type="text"  placeholder="Nombre" name="nombre">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="localizacion" type="text"  placeholder="Descripción y localización" name="localizacion">
+          </mat-form-field>
+        </mat-card-content>
+    </form> 
+        <div mat-dialog-actions>
+        <button mat-raised-button color="warn" class="btn-block" (click)="doRegistrar()" >Registrar aula</button>
+        <button mat-button (click)="cerrarDialog()">Cancelar</button>
+      </div>
+      
+    </mat-card>
+</div>

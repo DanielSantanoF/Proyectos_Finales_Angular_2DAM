@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Registrar Modalidad</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="nombre_extendido" type="text" placeholder="Nombre de la modalidad"
+            name="nombre_extendido">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="nombre_acortado" type="text" placeholder="Nombre acortado"
+            name="nombre_acortado">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="nombre_profesor" type="text" placeholder="Profesor de la modalidad"
+            name="nombre_profesor">
+        </mat-form-field>
+      </mat-card-content>
+    </form>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn" class="btn-block" (click)="doRegistrar()">Registrar modalidad</button>
+      <button mat-button (click)="cerrarDialog()">Cancelar</button>
+    </div>
+
+  </mat-card>
+</div>

@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Registrar Disposición</mat-card-title>
+      </mat-card-header>
+
+        <form class="example-form">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <label>Dia para añadir a disposiciones:</label><br/>
+            <mat-select [(ngModel)]="id_dia" name="id_dia">
+                <mat-option value="0"><p>Lunes</p></mat-option>
+                <mat-option value="1"><p>Martes</p></mat-option>
+                <mat-option value="2"><p>Miercoles</p></mat-option>
+                <mat-option value="3"><p>Jueves</p></mat-option>
+                <mat-option value="4"><p>Viernes</p></mat-option>
+                <mat-option value="5"><p>Sábado</p></mat-option>
+                <mat-option value="6"><p>Domingo</p></mat-option>
+            </mat-select>
+      </mat-form-field>
+        </mat-card-content>
+    </form> 
+        <div mat-dialog-actions>
+        <button mat-raised-button color="warn" class="btn-block" (click)="doRegistrar()" >Registrar disposición</button>
+        <button mat-button (click)="cerrarDialog()">Cancelar</button>
+      </div>
+      
+    </mat-card>
+</div>

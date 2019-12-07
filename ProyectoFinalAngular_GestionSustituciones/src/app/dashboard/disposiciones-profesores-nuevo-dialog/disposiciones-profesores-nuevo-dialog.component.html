@@ -1,0 +1,35 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="box">
+          <mat-card-header>
+            <mat-card-title>Registrar disposición a profesor</mat-card-title>
+          </mat-card-header>
+    
+            <form class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <label>Profesor:</label><br/>
+                    <mat-select [(ngModel)]="id_profesor" name="id_profesor">
+                        <mat-option *ngFor="let profesor of listaProfesores" [value]="profesor.id">{{profesor.data.nombre + " " + profesor.data.apellidos}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+    
+              <mat-form-field class="example-full-width">
+                    <label>Seleccione la hora de disposición del profesor:</label><br/>
+                    <mat-select [(ngModel)]="id_hora_disponible" name="id_hora_disponible">
+                        <mat-option value="1"><p>Primera hora (1º)</p></mat-option>
+                        <mat-option value="2"><p>Segunda hora (2º)</p></mat-option>
+                        <mat-option value="3"><p>Tercera hora (3º)</p></mat-option>
+                        <mat-option value="4"><p>Cuarta hora (4º)</p></mat-option>
+                        <mat-option value="5"><p>Quinta hora (5º)</p></mat-option>
+                        <mat-option value="6"><p>Sexta hora (6º)</p></mat-option>
+                    </mat-select>
+              </mat-form-field>
+            </mat-card-content>
+        </form> 
+            <div mat-dialog-actions>
+            <button mat-raised-button color="warn" class="btn-block" (click)="doRegistrar()" >Registrar disposicion</button>
+            <button mat-button (click)="cerrarDialog()">Cancelar</button>
+          </div>
+          
+        </mat-card>
+    </div>

@@ -1,0 +1,21 @@
+<div fxLayout='column'>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Generar pdf de sustituciones de hoy: {{today | date:'dd/MM/yyyy'}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h4>Previsualizar pdf
+          <button mat-icon-button color="warn" aria-label="Ver PDF" (click)="openPdf()">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button></h4>
+        <h4>Descargar pdf
+          <button mat-icon-button color="warn" aria-label="Generar PDF" (click)="generatePdf()">
+            <mat-icon>picture_as_pdf</mat-icon>
+          </button></h4>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

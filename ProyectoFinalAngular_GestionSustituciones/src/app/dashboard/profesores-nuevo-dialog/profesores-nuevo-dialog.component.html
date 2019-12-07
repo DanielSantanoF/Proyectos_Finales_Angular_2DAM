@@ -1,0 +1,40 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Registrar profesor</mat-card-title>
+      </mat-card-header>
+
+        <form class="example-form">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="nombre" type="text"  placeholder="Nombre" name="nombre">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="apellidos" type="text"  placeholder="Apellidos" name="apellidos">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="email" type="email"  placeholder="Email" name="email">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="telefono" type="text"  placeholder="Telefono" name="telefono">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <label>Seleccione si el profesor esta activo:</label><br/>
+            <mat-select [(ngModel)]="activo" name="activo">
+                <mat-option value="true"><p>Activo</p></mat-option>
+                <mat-option value="false"><p>Inactivo</p></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+    </form> 
+        <div mat-dialog-actions>
+        <button mat-raised-button color="warn" class="btn-block" (click)="doRegistrar()" >Registrar profesor</button>
+        <button mat-button (click)="cerrarDialog()">Cancelar</button>
+      </div>
+      
+    </mat-card>
+</div>
