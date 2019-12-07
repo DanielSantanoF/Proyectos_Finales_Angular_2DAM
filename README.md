@@ -4,7 +4,7 @@ Proyectos finales de [Angular](https://angular.io/ "Angular.io") de las asignuat
 * Programación Multimedia y Dispositivos Móviles 
 
 Son dos proyectos:
-* El primer proyecto trata sibre la gestión de sustituciones de profesores cuando un profesor falta y es necesario asignarle un profesor sustituto que este en disposición ese día de la semana a esa hora, consta de un calendario interactivo, y de un generador de pdf que genera un pdf con todas las sustituciones del dia en formato tabla.
+* El primer proyecto trata sobre la gestión de sustituciones de profesores cuando un profesor falta y es necesario asignarle un profesor sustituto que este en disposición ese día de la semana a esa hora, consta de un calendario interactivo, y de un generador de pdf que genera un pdf con todas las sustituciones del dia en formato tabla.
 * El segundo proyecto es más simple trata de gestionar una lista de turnos en dudas durante una clase, el profesor 
 
 ***
